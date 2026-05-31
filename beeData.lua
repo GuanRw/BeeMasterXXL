@@ -185,7 +185,9 @@ function M.getDroneTag(species)
         if droneGenes.species[2] ~= species then
             score = score - 100
         end
-        scoreList[i] = score
+        if droneGenes.species[1] == species or droneGenes.species[2] == species then
+            scoreList[i] = score
+        end
     end
     local bestIndex = 1
     for i, score in pairs(scoreList) do
@@ -239,16 +241,3 @@ function M.getAssistantBeesTag()
 end
 
 return M
-
---[[
-data = {
-    initialized = true,
-    assistantDroneTag = component.getStackInInternalSlot(1).tag,
-    speedLevel = 5,
-}
-robot.select(1)
-component.upgrade_me.sendItems()
-local file = io.open("data.txt", "w")
-file:write(require("serialization").serialize(data))
-file:close()
-]]
