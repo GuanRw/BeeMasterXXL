@@ -1253,7 +1253,7 @@ function M.initialize()--初始化至田野蜂以制造样板蜂
         }, 16)
     end, "缺少凛冬雄蜂")
     print("正在提纯温度适应性全5、湿度适应性全5基因")
-    drone1Slot, princess1Slot = M.purify(princess1Slot, wintryDroneSlot, templateGenes[1], wintryDroneSlot, ":initializing")
+    drone1Slot, princess1Slot = M.purify(princess1Slot, wintryDroneSlot, templateGenes[1], wintryDroneSlot, ":initializing1")
     if not drone1Slot then
         error("初始化失败")
     end
@@ -1270,7 +1270,7 @@ function M.initialize()--初始化至田野蜂以制造样板蜂
         }, 1)
     end, "缺少石头雄蜂")
     print("正在向石头蜂引入生育4x、温度适应性全5、湿度适应性全5基因")
-    drone2Slot, princess1Slot = M.purify(princess1Slot, drone2Slot, templateGenes[2], drone1Slot, ":initializing")
+    drone2Slot, princess1Slot = M.purify(princess1Slot, drone2Slot, templateGenes[2], drone1Slot, ":initializing2")
     if not drone2Slot then
         error("初始化失败")
     end
@@ -1282,7 +1282,7 @@ function M.initialize()--初始化至田野蜂以制造样板蜂
     print("正在向凛冬蜂引入采蜜对象石头、夜行性、耐雨飞行性、穴居性基因")
     robot.select(drone1Slot--[[@as number]])
     robot.dropUp(robot.count(drone1Slot--[[@as number]])-1)
-    drone1Slot, princess2Slot = M.purify(princess2Slot, drone1Slot, templateGenes[3], drone2Slot, ":initializing")
+    drone1Slot, princess2Slot = M.purify(princess2Slot, drone1Slot, templateGenes[3], drone2Slot, ":initializing3")
     --寻常蜂
     beeData.updateAssistantDrone(drone2Slot, true)
     beeData.updateAssistantPrincess(princess1Slot)
