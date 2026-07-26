@@ -1,5 +1,6 @@
 local component = require("component")
 --local serialization = require("serialization")
+_G.package.loaded.config = nil
 
 local strategy, mutations, device
 
