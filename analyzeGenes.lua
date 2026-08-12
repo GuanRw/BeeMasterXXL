@@ -1,6 +1,6 @@
 --解析NBT数据
 local zzlib = require("zzlib")
-local nbt = require("nbt")
+local nbt = require("lib/nbt")
 local database = require("component").database
 
 local function decode(tag)
