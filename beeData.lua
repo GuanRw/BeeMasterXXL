@@ -157,6 +157,13 @@ function M.getDroneTag(species)
     local scoreList = {}
     for i, drone in pairs(droneList) do
         local score = 0
+        -- ME网络返回的物品可能缺少 individual 字段，通过database补全
+        if not drone.individual then
+            database.clear(1)
+            upgrade_me.store({name="Forestry:beeDroneGE", tag=drone.tag}, database.address, 1)
+            local full = database.get(1)
+            if full then drone = full end
+        end
         local droneGenes = analyzeGenes(drone)
         local templateGenes = {
             speed = data.speedLevel,
@@ -209,10 +216,24 @@ function M.getPrincessTag(isNatural)
     if isNatural and data.usingPrincessTag and bot.checkItem({name="Forestry:beePrincessGE",tag=data.usingPrincessTag}) then
         return data.usingPrincessTag
     end
+    -- 安全获取公主蜂的 isNatural（ME网络返回的物品可能缺少 individual 字段）
+    local function getPrincessIsNatural(p)
+        if p.individual then
+            return p.individual.isNatural
+        end
+        database.clear(1)
+        upgrade_me.store({name="Forestry:beePrincessGE", tag=p.tag}, database.address, 1)
+        local full = database.get(1)
+        if full and full.individual then
+            return full.individual.isNatural
+        end
+        return nil
+    end
     local princess = doUntil(function()
         local princessList = upgrade_me.getItemsInNetwork({name = "Forestry:beePrincessGE"})
         for _, p in pairs(princessList) do
-            if p.individual.isNatural == (isNatural == true) and isPrincessAvailable(p.tag) then
+            local isNat = getPrincessIsNatural(p)
+            if isNat ~= nil and isNat == (isNatural == true) and isPrincessAvailable(p.tag) then
                 return p
             end
         end
