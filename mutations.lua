@@ -421,5 +421,10 @@ return{
     ["extrabees.species.yellorium"]={name="黄铀",parents={"forestry.speciesFrugal","extrabees.species.nuclear"},baseChance=5.0},
     ["gregtech.bee.speciesCertus"]={name="赛特斯",foundation={name="appliedenergistics2:tile.BlockQuartz",damage=0,label="赛特斯石英块"},parents={"forestry.speciesHermitic","gregtech.bee.speciesLapis"},baseChance=10.0},
     ["extrabees.species.shadow"]={name="阴影",parents={"forestry.speciesSinister","extrabees.species.rock"},baseChance=10.0},
-    ["gregtech.bee.speciesLithium"]={name="锂",foundation={name="gregtech:gt.blockframes",damage=6,label="锂框架"},parents={"gregtech.bee.speciesSalty","gregtech.bee.speciesAluminium"},baseChance=5.0}
+    ["gregtech.bee.speciesLithium"]={name="锂",foundation={name="gregtech:gt.blockframes",damage=6,label="锂框架"},parents={"gregtech.bee.speciesSalty","gregtech.bee.speciesAluminium"},baseChance=5.0},
+    ["gregtech.bee.speciesManasteel"]={name="魔力钢",parents={"gregtech.bee.speciesSteel","magicbees.speciesBotAlfheim"},baseChance=15,foundation={name="Botania:storage",damage=0,label="魔力钢块"}},
+    ["gregtech.bee.speciesMmm"]={name="M-M-M",parents={"gregtech.bee.speciesMachinist","gregtech.bee.speciesManasteel"},baseChance=1,foundation={name="Botania:storage",damage=3,label="魔力钻石块"}},
+    ["gregtech.bee.speciesElven"]={name="源质",parents={"gregtech.bee.speciesManasteel","magicbees.speciesTCVoid"},baseChance=5,foundation={name="Botania:storage",damage=2,label="源质钢块"}},
+    ["gregtech.bee.speciesTerrasteel"]={name="泰拉钢",parents={"gregtech.bee.speciesElven","gregtech.bee.speciesShadowmetal"},baseChance=5,foundation={name="Botania:storage",damage=1,label="泰拉钢块"}},
+    ["gregtech.bee.speciesGaiaspirit"]={name="盖亚之魂",parents={"gregtech.bee.speciesTerrasteel","gregtech.bee.speciesNaquadah"},baseChance=0.33,foundation={name="gregtech:gt.blockframes",damage=205,label="盖亚之魂框架"}},
 }
