@@ -344,7 +344,7 @@ return{
     ["forestry.speciesMajestic"]={name="庄严",parents={"forestry.speciesNoble","forestry.speciesCultivated"},baseChance=8.0},
     ["gregtech.bee.speciesMytryl"]={baseChance=6.0,dimension="IO",parents={"gregtech.bee.speciesIo","gregtech.bee.speciesMithril"},name="深空秘银",foundation={name="dreamcraft:tile.Mytryl",damage=0,label="深空秘银块"}},
     ["extrabees.species.spatial"]={name="空间",parents={"forestry.speciesHermitic","extrabees.species.unusual"},baseChance=5.0},
-    ["gregtech.bee.speciesEnergy"]={baseChance=10.0,parents={"forestry.speciesDemonic","extrabees.species.volcanic"},name="能量",biome="Boneyard Biome",foundation={name="IC2:itemCellEmpty",damage=10,label="热冷却液单元",tool="cell"}},
+    ["gregtech.bee.speciesEnergy"]={baseChance=10.0,parents={"forestry.speciesDemonic","extrabees.species.volcanic"},name="能量",biome="Boneyard",foundation={name="IC2:itemCellEmpty",damage=10,label="热冷却液单元",tool="cell"}},
     ["gregtech.bee.speciesSulfur"]={name="硫",parents={"gregtech.bee.speciesAsh","gregtech.bee.speciesPeat"},baseChance=15.0},
     ["magicbees.speciesGhastly"]={name="幽魂",parents={"magicbees.speciesTCBatty","magicbees.speciesEthereal"},baseChance=9.0},
     ["gregtech.bee.speciesSpace"]={name="宇宙",temperature=-2,parents={"forestry.speciesIndustrious","forestry.speciesHeroic"},baseChance=10.0},
